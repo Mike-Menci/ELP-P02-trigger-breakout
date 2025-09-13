@@ -11,9 +11,10 @@ if (motor->within_trigger_area()) {
 }
 
 This logic can be added to the stepper interrupt loop or motion planner in your firmware.
-✅ 3. OpenPnP Software Integration
+
+**** OpenPnP Software Integration
 OpenPnP does not yet natively support on-the-fly vision, but you can prototype it with the following steps:
-🔧 Step-by-Step Integration Plan:
+** Step-by-Step Integration Plan:
 Disable Bottom Vision Settling
 In OpenPnP, disable the default bottom vision settling behavior to allow motion to continue.
 Use External Trigger Mode
@@ -24,7 +25,7 @@ Process Image in Parallel
 While the head moves to the placement location, process the image in a background thread to extract part offset and rotation.
 Apply Correction at Placement
 Use the vision result to adjust the final placement coordinates.
-🔍 Note: OpenPnP currently processes vision synchronously, so you'll need to modify the pipeline or offload processing to avoid blocking motion
+Note: OpenPnP currently processes vision synchronously, so you'll need to modify the pipeline or offload processing to avoid blocking motion
 
 | Issue                   | Solution                                                                |
 | ----------------------- | ----------------------------------------------------------------------- |
