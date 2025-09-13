@@ -82,10 +82,12 @@ Pin	Name	Wire colour (typ.)	Notes
 4	SDA	green	I²C for future use, leave open
 5	SCL	yellow	I²C for future use, leave open
 Only pins 1 & 2 are used for triggering.
-Quick smoke test
+
+******* Quick smoke test
 Load v4l2-ctl --list-ctrls – confirm trigger_mode exists.
 Set camera to external trigger:
 v4l2-ctl -c trigger_mode=1
 Toggle controller pin – you should see one frame appear in cheese / ffplay each time.
+
 If you prefer a single-chip solution, replace the opto with a SN74LVC1T45 level-shifter powered from 1.8 V on the camera side; the wiring is identical, 
 but the above schematic keeps you safe even if you accidentally short 24 V into the trigger line.
